@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Karla:wght@400;500;700&display=swap');
+
+:root{
+  --cream:#F6EFE4;
+  --cream-dark:#EBE0CC;
+  --wine:#7A2E2A;
+  --wine-dark:#5A1F1C;
+  --clay:#C97B4A;
+  --ink:#2B211B;
+  --font-display:'Fraunces', serif;
+  --font-body:'Karla', sans-serif;
+}
+
+*{margin:0;padding:0;box-sizing:border-box;}
+body{
+  font-family:var(--font-body);
+  color:var(--ink);
+  background:var(--cream);
+  line-height:1.6;
+}
+a{text-decoration:none;color:inherit;}
+h1,h2{font-family:var(--font-display);}
+
+/* Header */
+.header{
+  position:sticky; top:0; z-index:50;
+  background:var(--cream);
+  border-bottom:1px solid var(--cream-dark);
+}
+.header-inner{
+  max-width:1100px; margin:0 auto;
+  display:flex; align-items:center; justify-content:space-between;
+  padding:18px 24px;
+}
+.logo{font-family:var(--font-display); font-weight:700; font-size:1.4rem;}
+.logo-accent{color:var(--wine);}
+.nav{display:flex; gap:28px;}
+.nav a{font-weight:500; font-size:.95rem;}
+.btn-whatsapp{
+  background:var(--wine); color:#fff;
+  padding:10px 18px; border-radius:100px; font-weight:700; font-size:.9rem;
+}
+
+/* Hero */
+.hero{
+  max-width:1100px; margin:0 auto;
+  display:flex; align-items:center; justify-content:space-between;
+  padding:70px 24px 90px;
+  gap:40px;
+  position:relative;
+}
+.hero-content{max-width:520px;}
+.eyebrow{
+  text-transform:uppercase; letter-spacing:.14em; font-size:.78rem;
+  color:var(--clay); font-weight:700; margin-bottom:14px;
+}
+.hero h1{
+  font-size:3.2rem; font-weight:700; line-height:1.05;
+  color:var(--wine-dark); margin-bottom:18px;
+}
+.hero-slogan{font-size:1.15rem; color:#5c4f43; margin-bottom:28px;}
+.btn-primary{
+  display:inline-block;
+  background:var(--wine); color:#fff;
+  padding:15px 30px; border-radius:100px;
+  font-weight:700; font-size:1rem;
+  transition:transform .15s ease, background .15s ease;
+}
+.btn-primary:hover{background:var(--wine-dark); transform:translateY(-2px);}
+
+.hero-visual{position:relative; width:220px; height:220px; flex-shrink:0;}
+.bun{position:absolute; border-radius:50%; background:var(--clay);}
+.bun-1{width:140px; height:140px; top:0; right:20px; background:var(--clay);}
+.bun-2{width:90px; height:90px; bottom:10px; right:100px; background:var(--wine);}
+.bun-3{width:60px; height:60px; top:60px; right:0; background:var(--cream-dark); border:2px solid var(--clay);}
+
+/* Sobre */
+.sobre{
+  max-width:700px; margin:0 auto; padding:40px 24px 90px; text-align:center;
+}
+.sobre h2{font-size:2rem; color:var(--wine-dark); margin-bottom:18px;}
+.sobre p{font-size:1.05rem; color:#5c4f43;}
+
+/* Produtos */
+.produtos{max-width:1100px; margin:0 auto; padding:20px 24px 90px;}
+.produtos h2{font-size:2rem; color:var(--wine-dark); margin-bottom:34px; text-align:center;}
+.grid-produtos{
+  display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:22px;
+}
+.card-produto{
+  background:#fff; border-radius:18px; padding:26px;
+  border:1px solid var(--cream-dark);
+  transition:transform .15s ease, box-shadow .15s ease;
+}
+.card-produto:hover{transform:translateY(-4px); box-shadow:0 12px 24px rgba(122,46,42,.1);}
+.card-produto h3{font-family:var(--font-display); font-size:1.25rem; margin-bottom:6px; color:var(--wine-dark);}
+.card-produto .preco{color:var(--clay); font-weight:700; margin-bottom:8px; display:block;}
+.card-produto p{font-size:.92rem; color:#6b5d4f;}
+
+/* Galeria */
+.galeria{
+  display:grid; grid-template-columns:repeat(3,1fr); gap:4px;
+  max-width:1100px; margin:0 auto 90px; padding:0 24px;
+}
+.foto-galeria{
+  aspect-ratio:1; background:linear-gradient(135deg,var(--clay),var(--wine));
+  border-radius:14px; display:flex; align-items:flex-end; padding:16px;
+  color:#fff; font-weight:600; font-size:.85rem;
+}
+
+/* Contacto */
+.contacto{background:var(--wine-dark); color:var(--cream); padding:70px 24px;}
+.contacto h2{max-width:1100px; margin:0 auto 30px; font-size:2rem;}
+.contacto-grid{
+  max-width:1100px; margin:0 auto;
+  display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:30px;
+}
+.contacto-info p{margin-bottom:16px; font-size:.95rem; opacity:.9;}
+.contacto .btn-primary{background:var(--clay);}
+.contacto .btn-primary:hover{background:#b26438;}
+
+/* Footer */
+.footer{
+  text-align:center; padding:24px; font-size:.82rem; color:#8a7c6c; background:var(--cream);
+}
+
+@media (max-width:720px){
+  .nav{display:none;}
+  .hero{flex-direction:column; text-align:center; padding-top:40px;}
+  .hero h1{font-size:2.3rem;}
+  .hero-visual{margin-top:20px;}
+  .galeria{grid-template-columns:1fr 1fr;}
+}
